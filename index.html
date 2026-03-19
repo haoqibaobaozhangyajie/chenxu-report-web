@@ -32,9 +32,14 @@
       <main>
         <section class="hero">
           <div class="hero-copy">
-            <p class="eyebrow">正式述职专题页</p>
+            <p class="eyebrow">竞聘述职 · 互动呈现版</p>
             <h1>陈旭竞聘述职报告</h1>
-            <p class="hero-subtitle">围绕人才发展、共享服务、薪酬数据治理三段经历，系统呈现专业积累、项目成果与主管职级胜任思考。</p>
+            <p class="hero-subtitle">围绕人才发展、共享服务、薪酬数据治理三段经历，系统呈现专业积累、项目成果与主管职级胜任思考。页面在正式基调上加入更清晰的互动表达，便于在竞聘沟通中快速抓住重点。</p>
+
+            <div class="hero-actions">
+              <a class="button button-primary" href="#projects">查看重点项目</a>
+              <button class="button button-secondary" id="focusToggle" type="button">切换重点视图</button>
+            </div>
 
             <div class="hero-summary">
               <article>
@@ -61,6 +66,21 @@
               <span class="panel-tag">任职信息</span>
               <span class="panel-tag muted">2022.07 - 至今</span>
             </div>
+            <div class="radar-panel">
+              <div class="radar-grid">
+                <div class="radar-ring radar-ring-one"></div>
+                <div class="radar-ring radar-ring-two"></div>
+                <div class="radar-ring radar-ring-three"></div>
+                <div class="radar-core">
+                  <small>主管胜任关注点</small>
+                  <strong>流程 · 数据 · 协同 · 交付</strong>
+                </div>
+                <span class="radar-node node-a">流程搭建</span>
+                <span class="radar-node node-b">项目推进</span>
+                <span class="radar-node node-c">数据治理</span>
+                <span class="radar-node node-d">跨部门协同</span>
+              </div>
+            </div>
             <div class="panel-card">
               <p>现所在部门</p>
               <strong>人力资源部（党委组织部）</strong>
@@ -74,6 +94,12 @@
               <span>
                 具有人力资源培养体系、共享服务与薪酬数据管理的实战经验，能够在复杂口径与跨区域协同场景中快速厘清问题并推动解决。
               </span>
+            </div>
+            <div class="hero-ticker">
+              <span>培养体系搭建</span>
+              <span>SSC建设</span>
+              <span>UAT测试</span>
+              <span>薪酬治理</span>
             </div>
           </aside>
         </section>
@@ -115,20 +141,33 @@
 
           <div class="highlight-band">
             <article class="metric">
-              <strong>3</strong>
+              <strong class="counter" data-target="3">0</strong>
               <span>核心岗位阶段</span>
             </article>
             <article class="metric">
-              <strong>24</strong>
+              <strong class="counter" data-target="24">0</strong>
               <span>页原始PPT内容重构为专题页</span>
             </article>
             <article class="metric">
-              <strong>4W+</strong>
+              <strong class="counter" data-target="4" data-suffix="W+">0</strong>
               <span>系统报错两周内完成清理</span>
             </article>
             <article class="metric">
-              <strong>91%</strong>
+              <strong class="counter" data-target="91" data-suffix="%">0</strong>
               <span>管培生整体留存率</span>
+            </article>
+          </div>
+
+          <div class="insight-board">
+            <article class="insight-card">
+              <span>结构优势</span>
+              <strong>从项目执行走向主管视角</strong>
+              <p>网页将原始PPT中分散的工作内容重新组织为“项目价值 + 能力沉淀 + 岗位匹配”三层叙事，更利于竞聘场景表达。</p>
+            </article>
+            <article class="insight-card">
+              <span>表达方式</span>
+              <strong>正式，但不再平铺直叙</strong>
+              <p>用可切换的模块、重点卡片和动态指标承载原有内容，让阅读者更快抓住结果与差异化竞争力。</p>
             </article>
           </div>
         </section>
@@ -140,8 +179,37 @@
             <p>按照“背景与目标、关键举措、成果价值、能力沉淀”四个维度进行网页化重组，突出正式述职场景下更关心的结果与胜任力表达。</p>
           </div>
 
+          <div class="project-switcher" id="projectSwitcher">
+            <button class="project-pill active" data-project="training" type="button">培养体系</button>
+            <button class="project-pill" data-project="ssc" type="button">共享中心</button>
+            <button class="project-pill" data-project="entry" type="button">专项支援</button>
+            <button class="project-pill" data-project="payroll" type="button">薪酬治理</button>
+          </div>
+
+          <div class="project-spotlight">
+            <div class="spotlight-copy">
+              <p class="section-tag">Spotlight</p>
+              <h3 id="spotlightTitle">管培生培养体系建设项目</h3>
+              <p id="spotlightText">从零起步搭建覆盖“选拔—培养—发展”的完整培养体系，为公司后续梯队建设形成可复制底座。</p>
+            </div>
+            <div class="spotlight-stats">
+              <article>
+                <span>项目类型</span>
+                <strong id="spotlightMetaOne">体系搭建</strong>
+              </article>
+              <article>
+                <span>突出成果</span>
+                <strong id="spotlightMetaTwo">留存率 91%</strong>
+              </article>
+              <article>
+                <span>能力关键词</span>
+                <strong id="spotlightMetaThree">标准化 / 可复制 / 可推广</strong>
+              </article>
+            </div>
+          </div>
+
           <div class="project-stack">
-            <article class="project-card">
+            <article class="project-card active" data-project-card="training">
               <div class="project-head">
                 <span class="project-index">01</span>
                 <div>
@@ -183,7 +251,7 @@
               </div>
             </article>
 
-            <article class="project-card">
+            <article class="project-card" data-project-card="ssc">
               <div class="project-head">
                 <span class="project-index">02</span>
                 <div>
@@ -214,7 +282,7 @@
               </div>
             </article>
 
-            <article class="project-card">
+            <article class="project-card" data-project-card="entry">
               <div class="project-head">
                 <span class="project-index">03</span>
                 <div>
@@ -240,7 +308,7 @@
               </div>
             </article>
 
-            <article class="project-card">
+            <article class="project-card" data-project-card="payroll">
               <div class="project-head">
                 <span class="project-index">04</span>
                 <div>
@@ -319,6 +387,25 @@
             <p>围绕专业认知与判断、团队协作与持续成长两个层面，提炼与主管岗位更直接相关的胜任优势。</p>
           </div>
 
+          <div class="strength-meter">
+            <div class="meter-item">
+              <span>业务理解</span>
+              <div class="meter-bar"><i style="width: 86%"></i></div>
+            </div>
+            <div class="meter-item">
+              <span>流程统筹</span>
+              <div class="meter-bar"><i style="width: 88%"></i></div>
+            </div>
+            <div class="meter-item">
+              <span>数据治理</span>
+              <div class="meter-bar"><i style="width: 92%"></i></div>
+            </div>
+            <div class="meter-item">
+              <span>协同推动</span>
+              <div class="meter-bar"><i style="width: 90%"></i></div>
+            </div>
+          </div>
+
           <div class="grid two">
             <article class="card card-border">
               <h3>专业认知与判断</h3>
@@ -393,7 +480,7 @@
           <div>
             <p class="section-tag">Closing</p>
             <h2>感谢审阅</h2>
-            <p>本网页版以原始述职PPT为基础，对信息结构、阅读节奏与视觉表达进行了正式化优化，更适合在电脑或手机端进行展示与交流。</p>
+            <p>本网页版以原始述职PPT为基础，对信息结构、阅读节奏与视觉表达进行了正式化优化，并增加互动式查看体验，更适合在电脑或手机端进行展示与交流。</p>
           </div>
         </section>
       </main>
